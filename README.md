@@ -139,15 +139,3 @@ python test_dacm.py --image path/to/photo.png --ckpt checkpoints/dacm_last.pth -
 ```
  
 Output includes degradation type probabilities, severity score, Teff, and severity map statistics. `--heuristic` additionally runs the Laplacian-variance fallback estimator.
- 
-## Degradation Types
- 
-Training applies random combinations of three synthetic degradations:
- 
-| Type | Severity |
-|---|---|
-| Gaussian noise | (σ − σ_min) / (σ_max − σ_min) |
-| Gaussian blur | (r − r_min) / (r_max − r_min) |
-| Fading | 1 − normalized value (inverted) |
- 
-Sampling strategy: 50% single degradation, 30% two degradations, 20% all three.
